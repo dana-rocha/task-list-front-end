@@ -32,13 +32,25 @@ const App = () => {
     console.log('toggleComplete was called');
   };
 
+  const deleteTask = (id) => {
+    const newTasks = [];
+
+    for (const task of TASKS) {
+      if (task.id !== id) {
+        newTasks.push(task);
+      }
+    setTasks(newTasks);
+    console.log('deleteTask was called');
+    }
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>Ada&apos;s Task List</h1>
       </header>
       <main>
-        <div>{<TaskList tasks={TASKS} toggleCompleteCallback={toggleComplete}/>}</div>
+        <div>{<TaskList tasks={TASKS} toggleCompleteCallback={toggleComplete} deleteTaskCallback={deleteTask}/>}</div>
       </main>
     </div>
   );

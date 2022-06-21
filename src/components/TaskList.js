@@ -14,6 +14,7 @@ const TaskList = (props) => {
           isComplete={task.isComplete}
           // should this be task.toggle or tasks.toggle?
           toggleCompleteCallback={props.toggleCompleteCallback}
+          deleteTaskCallback={props.deleteTaskCallback}
         />
       );
     });
@@ -29,7 +30,8 @@ TaskList.propTypes = {
       isComplete: PropTypes.bool.isRequired,
     })
   ),
-  toggleCompleteCallback: PropTypes.func.isRequired
+  toggleCompleteCallback: PropTypes.func.isRequired,
+  deleteTaskCallback: PropTypes.func.isRequired
 };
 
 export default TaskList;
