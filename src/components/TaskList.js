@@ -13,8 +13,8 @@ const TaskList = (props) => {
           title={task.title}
           isComplete={task.isComplete}
           // should this be task.toggle or tasks.toggle?
-          toggleCompleteCallback={props.toggleCompleteCallback}
-          deleteTaskCallback={props.deleteTaskCallback}
+          onClickCallback={props.onTaskClickCallback}
+          onDeleteCallback={props.onTaskDeleteCallback}
         />
       );
     });
@@ -23,15 +23,15 @@ const TaskList = (props) => {
 };
 
 TaskList.propTypes = {
-  tasks: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      isComplete: PropTypes.bool.isRequired,
-    })
-  ),
-  toggleCompleteCallback: PropTypes.func.isRequired,
-  deleteTaskCallback: PropTypes.func.isRequired
+  // tasks: PropTypes.arrayOf(
+  //   PropTypes.shape({
+  //     id: PropTypes.number.isRequired,
+  //     title: PropTypes.string.isRequired,
+  //     isComplete: PropTypes.bool.isRequired,
+  //   })
+  // ),
+  onTaskClickCallback: PropTypes.func.isRequired,
+  onTaskDeleteCallback: PropTypes.func.isRequired
 };
 
 export default TaskList;
