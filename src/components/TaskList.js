@@ -23,13 +23,13 @@ const TaskList = (props) => {
 };
 
 TaskList.propTypes = {
-  // tasks: PropTypes.arrayOf(
-  //   PropTypes.shape({
-  //     id: PropTypes.number.isRequired,
-  //     title: PropTypes.string.isRequired,
-  //     isComplete: PropTypes.bool.isRequired,
-  //   })
-  // ),
+  tasks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      isComplete: PropTypes.bool.isRequired,
+    })
+  ),
   onTaskClickCallback: PropTypes.func.isRequired,
   onTaskDeleteCallback: PropTypes.func.isRequired
 };

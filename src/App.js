@@ -9,18 +9,11 @@ const App = () => {
   const [TASKS, setTasks] = useState([]);
 
   const URL = 'https://task-list-api-c17.herokuapp.com/tasks';
-/*
-    class Task(db.Model):
-    task_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    title = db.Column(db.String)
-    description = db.Column(db.String)
-    completed_at = db.Column(db.DateTime)
-    goal_id = db.Column(db.Integer, db.ForeignKey('goal.goal_id'))
-*/
-    
-// Object.keys(data).map(item => {...});
-// Object.keys(data).forEach(item => {...});
 
+/*
+useEffect hook makes an API call to get the list of tasks 
+from the database when the React app is loaded
+*/
   useEffect(() => {
     axios.get(URL)
       .then((response) => {
@@ -42,13 +35,6 @@ const App = () => {
       });
   }, []);
 
-          // key={task.id}
-          // id={task.id}
-          // title={task.title}
-          // isComplete={task.isComplete}
-          // // should this be task.toggle or tasks.toggle?
-          // onClickCallback={props.onTaskClickCallback}
-          // onDeleteCallback={props.onTaskDeleteCallback}
 
   const toggleComplete = (id) => {
     // const [complete, setComplete] = useState(isComplete);
